@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 58fbcca7d6cc57944946ef8197e7a0fd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MADE Future X HEADER
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 10f36e2507da6fc4c8e1ac69f0292fee, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

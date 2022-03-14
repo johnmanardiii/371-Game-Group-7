@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: ed679926bd8491b41a19ec9ad0a7718b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MADE Future X
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 849c66ef3531e2a46a1f0c00b1d5741a, type: 3}
+  - {fileID: 12800000, guid: 74a8b228949c8c84cb86476f4f665728, type: 3}
+  - {fileID: 12800000, guid: 5253ebcf504f1c64d968927dddcfb5fe, type: 3}
+  - {fileID: 12800000, guid: f5d4e2cc5c959194bab192fbec541752, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
