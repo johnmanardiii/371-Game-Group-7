@@ -133,10 +133,11 @@ MonoBehaviour:
   startSpeed: 5
   speed: 2
   distanceTravelled: 0
-  health: 250
+  health: 500
   system: {fileID: 8783483418593803593}
   source: {fileID: 776792773288158021}
   source2: {fileID: 6009996494621213254}
+  type: 3
 --- !u!198 &8783483418593803593
 ParticleSystem:
   m_ObjectHideFlags: 0

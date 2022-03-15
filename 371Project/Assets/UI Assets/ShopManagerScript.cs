@@ -6,7 +6,7 @@ using TMPro;
 
 public class ShopManagerScript : MonoBehaviour
 {
-    private int coins = 3000;
+    private int coins = 500;
     private int rubies = 0;
     private int diamonds = 0;
     private int oil = 0;

@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
 
+public enum EnemyType
+{
+    REGULAR, BEEFY, FAST, MOAB
+}
+
 public class Enemy : MonoBehaviour
 {
     private PathCreator pathCreator;
@@ -17,6 +22,8 @@ public class Enemy : MonoBehaviour
     public AudioSource source;
     public AudioSource source2;
     private bool check = true;
+
+    public EnemyType type;
     public PathCreator PathCreator
     {
         set => pathCreator = value;

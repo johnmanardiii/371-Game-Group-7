@@ -137,6 +137,7 @@ MonoBehaviour:
   system: {fileID: 8783483418593803593}
   source: {fileID: 891556493874921189}
   source2: {fileID: 2900957754766229019}
+  type: 2
 --- !u!198 &8783483418593803593
 ParticleSystem:
   m_ObjectHideFlags: 0

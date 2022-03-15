@@ -39,13 +39,15 @@ public class WaveSpawner : MonoBehaviour
     public bool waveActive = false;
     public bool spawningEnemies = false;
 
-    public TextMeshProUGUI path1Text;
-    public TextMeshProUGUI path2Text;
-    public TextMeshProUGUI path3Text;
+    public WavePreview path1;
+    public WavePreview path2;
+    public WavePreview path3;
 
     private CursorController _cursor;
 
     public Action OnWaveStart;
+
+    public AudioSource source;
 
     private void Awake()
     {
@@ -70,6 +72,7 @@ public class WaveSpawner : MonoBehaviour
         }
         Debug.Log("WE should get here!");
         Debug.Log("Money: " + waves[_nextWave - 1].moneyForWave);
+        source.Play();
         _shopManager.AddResource(waves[_nextWave - 1].moneyForWave, Planet.PlanetResourceType.COIN);
         waveActive = false;
         EnableRoundText();
@@ -77,9 +80,14 @@ public class WaveSpawner : MonoBehaviour
 
     private void DisableRoundText()
     {
-        path1Text.gameObject.SetActive(false);
-        path2Text.gameObject.SetActive(false);
-        path3Text.gameObject.SetActive(false);
+        path1.gameObject.SetActive(false);
+        path2.gameObject.SetActive(false);
+        path3.gameObject.SetActive(false);
+    }
+
+    private void SetPathText()
+    {
+        
     }
 
     private void EnableRoundText()
@@ -88,30 +96,37 @@ public class WaveSpawner : MonoBehaviour
         {
             return;
         }
-        int path1, path2, path3;
-        path1 = path2 = path3 = 0;
+        
+        path1.ResetCount();
+        path2.ResetCount();
+        path3.ResetCount();
+        
+        
         foreach(var _subWave in waves[_nextWave].subWaves)
         {
             if(_subWave.wavePath.id == 1)
             {
-                path1 += _subWave.count;
+                path1.AddCount(_subWave.count, _subWave.enemy.GetComponent<Enemy>().type);
+                //path1 += _subWave.count;
             }
             else if(_subWave.wavePath.id == 2)
             {
-                path2 += _subWave.count;
+                path2.AddCount(_subWave.count, _subWave.enemy.GetComponent<Enemy>().type);
+                //path2 += _subWave.count;
             }
             else
             {
-                path3 += _subWave.count;
+                path3.AddCount(_subWave.count, _subWave.enemy.GetComponent<Enemy>().type);
+                //path3 += _subWave.count;
             }
         }
-        path1Text.gameObject.SetActive(true);
-        path2Text.gameObject.SetActive(true);
-        path3Text.gameObject.SetActive(true);
+        path1.gameObject.SetActive(true);
+        path2.gameObject.SetActive(true);
+        path3.gameObject.SetActive(true);
         // set the text of all objects to display number
-        path1Text.text = "x" + path1;
-        path2Text.text = "x" + path2;
-        path3Text.text = "x" + path3;
+        path1.UpdateText();
+        path2.UpdateText();
+        path3.UpdateText();
     }
 
     public void SpawnNextWave()
